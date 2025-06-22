@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+margin: 0;
+padding: 0;
+  font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.h1 {
+  font-size: 56px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 2px;
+  line-height: 58px;
+}
+.h2 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 1.5px;
+  line-height: 44px;
+}
+.h3 {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 1.15px;
+  line-height: 36px;
+}
+.h4 {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 2px;
+  line-height: 38px;
+}
+.h5 {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 1.7px;
+  line-height: 33px;
+}
+.h6 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 1.3px;
+  line-height: 24px;
+}
+.overline-text {
+  font-size: 14px;
+  font-weight: regular;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 10px;
+  line-height: 19px;
+}
+.subtitle {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+.subtitle-2 {
+  font-size: 15px;
+  font-weight: medium;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 0px;
+  line-height: 25px;
+  opacity: 50%;
+}
+
+input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"] {
+    @apply w-full h-[56px] rounded-lg border border-gray-300 px-6 font-bold text-sm;
+    @apply transition-all; /* For smooth focus transition */
+
+    /* Placeholder text styling */
+    @apply placeholder:text-dark/40;
+  }
+
+  .btn {
+    @apply inline-block py-[15px] px-[31px] uppercase text-subtitle font-bold tracking-[1px] whitespace-nowrap transition-colors;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-light hover:bg-lighter-accent;
+  }
+  /* 
+    THIS IS THE KEY PART FOR THE FOCUS STYLE
+    - `focus:` applies styles when the input is focused.
+    - `border-accent` changes the border color to your orange accent.
+    - `ring-1 ring-accent` adds a soft, glowing "ring" around the input.
+  */
+  input:focus {
+    @apply border-accent ring-1 ring-accent outline-none;
+  }
+  .hamburger-icon {
+    @apply relative block w-4 h-[3px] bg-light cursor-pointer;
+  }
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: '';
+    @apply absolute w-4 h-[3px] bg-light;
+  }
+  .hamburger-icon::before {
+    @apply -top-[6px];
+  }
+  .hamburger-icon::after {
+    @apply -bottom-[6px];
+  }
+
+.section-padding {
+  @apply px-6 tablet:px-10 desktop:px-[11.45%];
+}
+
+/* In src/index.css */
+
+@layer components {
+  /* ... your other component classes like .hamburger-icon ... */
+
+  /* This is the missing style for the modal background overlay */
+  .overlay-gradient {
+    background: linear-gradient(rgba(255, 255, 255, 0) 90px, rgba(0, 0, 0, 0.4) 90px);
+  }
+
+  /* Helper utility to hide scrollbars on elements */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+}
+
+/* Alternative simple overlay */
+.simple-overlay {
+  @apply bg-black/50; /* 50% transparent black */
+}
+
+:root {
+  --bg-mobile: url('assets/home/mobile/image-speaker-zx7.jpg');
+  --bg-tablet: url('assets/home/tablet/image-speaker-zx7.jpg');
+  --bg-desktop: url('assets/home/desktop/image-speaker-zx7.jpg');
+}
+
+.responsive-background-container {
+  background-image: var(--bg-mobile);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 320px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 380px) {
+  .responsive-background-container {
+    background-image: var(--bg-tablet);
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .responsive-background-container {
+    background-image: var(--bg-desktop);
+  }
+}
