@@ -49,11 +49,11 @@ export default function Navbar({ isNavOpen, closeNav }) {
         >
           <div 
             ref={menuRef}
-            className='fixed top-[93px] left-0 right-0 z-50 bg-white rounded-b-lg p-8 pt-16'
+            className='fixed top-[93px] left-0 right-0 z-50 bg-white rounded-b-lg shadow-lg p-6'
             role="dialog"
             aria-modal="true"
           >
-            <CategoriesList closeNav={closeNav} />
+            <CategoriesList closeNav={closeNav} isMobileMenu={true} />
           </div>
         </CSSTransition>
       </div>

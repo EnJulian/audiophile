@@ -44,7 +44,7 @@ export default function Home() {
              
             <Link
               to='/xx99-mark-two-headphones'
-              onClick={() => window.scrollTo(0, 0)}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="mt-10 w-fit inline-block bg-accent text-light py-[15px] px-[31px] uppercase text-subtitle font-bold tracking-[1px] hover:bg-lighter-accent transition-colors"
             >
               see product
@@ -52,7 +52,7 @@ export default function Home() {
           </section>
         </div>
         
-        <CategoriesList closeNav={() => {}} /> 
+        <CategoriesList /> 
         <Products />
       </div>
 

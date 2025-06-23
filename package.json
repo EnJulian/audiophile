@@ -1,8 +1,11 @@
 {
-  "name": "e-commerce",
+  "name": "audiophile-ecommerce",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Premium e-commerce platform for high-quality audio equipment",
+  "author": "Julian",
+  "keywords": ["react", "ecommerce", "audio", "headphones", "speakers", "vite", "tailwind"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

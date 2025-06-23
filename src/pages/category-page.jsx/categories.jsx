@@ -16,7 +16,7 @@ export default function Category({ categoryName }) {
       <CategoryProducts categoryProducts={categoryProducts} />
 
       <div className="mt-28 space-y-28 tablet:mt-40 tablet:space-y-40">
-        <CategoriesList closeNav={() => {}} />
+        <CategoriesList />
         <BestGear />
       </div>
     </div>

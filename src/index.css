@@ -175,3 +175,44 @@ input[type="text"],
     background-image: var(--bg-desktop);
   }
 }
+
+/* Mobile Menu Transitions */
+.overlay-fade-enter {
+  opacity: 0;
+}
+
+.overlay-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.overlay-fade-exit {
+  opacity: 1;
+}
+
+.overlay-fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.menu-slide-enter {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.menu-slide-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.menu-slide-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.menu-slide-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 300ms ease-in, opacity 300ms ease-in;
+}

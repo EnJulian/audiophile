@@ -36,7 +36,7 @@ export default function ProductPage({ productId }) {
         <OtherProducts productData={productData} />
   
         <div className="mt-40">
-          <CategoriesList closeNav={() => {}} />
+          <CategoriesList />
         </div>
         <div className="mt-20">
           <BestGear />
